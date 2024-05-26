@@ -1,0 +1,42 @@
+/* src/App.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .resultados table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .resultados th, .resultados td {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  .resultados th {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .resultados td {
+    text-align: center;
+  }
+  
+  .resultados p {
+    font-size: 18px;
+    margin-top: 20px;
+  }
+  
