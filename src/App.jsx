@@ -1,41 +1,45 @@
-// src/App.jsx
-import React, { useState } from "react";
-import Perguntas from "./Perguntas";
-import Resultados from "./Resultados";
-import './App.css';
+import React, { useEffect } from "react";
+import GlobalLayout from "./components/GlobalLayout";
+import HomeSection from "./components/HomeSection";
+import SimulatorSection from "./components/simulator/SimulatorSection";
+import ResultSection from "./components/ResultSection";
+import HowItWorksSection from "./components/HowItWorksSection";
+import DocumentUploadSection from "./components/DocumentUploadSection";
+import FAQSection from "./components/FAQSection";
+import { SimulationProvider } from "./context/SimulationContext";
+import useAnalytics from "./hooks/useAnalytics";
+import "./styles/global.css";
 
 const App = () => {
-  const [respostas, setRespostas] = useState([]);
-  const [currentStep, setCurrentStep] = useState(0);
+  const { trackEvent } = useAnalytics();
 
-  const steps = [
-    "encanamento",
-    "instalacao",
-    "chaveiro",
-    "eletricista"
-  ];
+  useEffect(() => {
+    trackEvent("view_home");
+  }, [trackEvent]);
 
-  const handleNext = (categoria, resposta) => {
-    setRespostas([...respostas, [categoria, resposta]]);
-    if (currentStep < steps.length - 1) {
-      setCurrentStep(currentStep + 1);
-    } else {
-      setCurrentStep(currentStep + 1);
-    }
+  const handleNavEvent = (eventName, params) => {
+    trackEvent(eventName, params);
   };
 
-  if (currentStep < steps.length) {
-    return (
-      <div className="container">
-        <Perguntas step={steps[currentStep]} onNext={handleNext} />
-      </div>
-    );
-  }
-
   return (
-    <div className="container">
-      <Resultados respostas={respostas} />
-    </div>
+    <SimulationProvider>
+      <GlobalLayout onNavEvent={handleNavEvent}>
+        <HomeSection
+          onPrimaryCTA={() => {
+            trackEvent("click_cta_simular");
+            const simulator = document.getElementById("simulador");
+            if (simulator) {
+              simulator.scrollIntoView({ behavior: "smooth" });
+            }
+          }}
+        />
+        <SimulatorSection />
+        <ResultSection />
+        <HowItWorksSection />
+        <DocumentUploadSection />
+        <FAQSection />
+      </GlobalLayout>
+    </SimulationProvider>
   );
 };
 

@@ -1,0 +1,170 @@
+.simulator {
+  gap: 2.5rem;
+}
+
+.section-intro {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.wizard {
+  background: #fff;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 20px 50px rgba(15, 34, 70, 0.1);
+  display: grid;
+  gap: 1.5rem;
+}
+
+.wizard__steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 0.75rem;
+}
+
+.wizard__step {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: rgba(7, 22, 43, 0.04);
+  border-radius: 14px;
+  font-weight: 600;
+  color: #31425d;
+}
+
+.wizard__step span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 999px;
+  background: rgba(11, 94, 215, 0.15);
+  color: #0b5ed7;
+}
+
+.wizard__step.is-active {
+  background: rgba(11, 94, 215, 0.08);
+  color: #0b5ed7;
+}
+
+.wizard__step.is-active span {
+  background: #0b5ed7;
+  color: #fff;
+}
+
+.wizard__step.is-done {
+  background: rgba(76, 175, 80, 0.1);
+  color: #1b5e20;
+}
+
+.wizard__step.is-done span {
+  background: #4caf50;
+  color: #fff;
+}
+
+.wizard__panel {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.form-control {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.form-control label,
+.form-control span {
+  font-weight: 600;
+  color: #07162b;
+}
+
+.form-control input[type="text"],
+.form-control input[type="date"] {
+  border: 1px solid rgba(7, 22, 43, 0.15);
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.form-control input[type="range"] {
+  width: 100%;
+}
+
+.slider-value {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #0b5ed7;
+}
+
+.help-text {
+  font-size: 0.85rem;
+  color: #4c5a74;
+}
+
+.options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  border: 1px solid rgba(11, 94, 215, 0.35);
+  border-radius: 999px;
+  padding: 0.35rem 0.75rem;
+  cursor: pointer;
+  font-weight: 500;
+  color: #0b5ed7;
+  background: rgba(11, 94, 215, 0.08);
+}
+
+.chip input {
+  appearance: none;
+  width: 0;
+  height: 0;
+}
+
+.chip input:checked + span,
+.chip:hover span {
+  color: #fff;
+}
+
+.chip input:checked ~ span,
+.chip:hover span {
+  background: #0b5ed7;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+}
+
+.wizard__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: flex-end;
+}
+
+.alert-inline {
+  font-size: 0.9rem;
+  color: #c43c00;
+}
+
+.alert-banner ul {
+  margin: 0;
+  padding-left: 1.25rem;
+  color: #c43c00;
+}
+
+@media (max-width: 720px) {
+  .wizard {
+    padding: 1.5rem;
+  }
+
+  .wizard__actions {
+    justify-content: center;
+  }
+}
