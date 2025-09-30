@@ -1,0 +1,53 @@
+.how-it-works {
+  gap: 2rem;
+}
+
+.timeline {
+  display: grid;
+  gap: 1rem;
+}
+
+.timeline__item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1rem;
+  align-items: center;
+  background: #fff;
+  padding: 1.25rem 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 14px 30px rgba(12, 28, 58, 0.1);
+}
+
+.timeline__index {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: #0b5ed7;
+  background: rgba(11, 94, 215, 0.12);
+}
+
+.timeline__content h3 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.timeline__content p {
+  margin: 0.35rem 0 0;
+  color: #31425d;
+}
+
+@media (max-width: 720px) {
+  .timeline__item {
+    grid-template-columns: 1fr;
+    text-align: left;
+  }
+
+  .timeline__index {
+    justify-self: flex-start;
+  }
+}

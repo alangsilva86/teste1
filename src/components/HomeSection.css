@@ -1,0 +1,48 @@
+.home {
+  align-items: center;
+}
+
+.home__hero {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.home__hero h1 {
+  font-size: clamp(2rem, 3vw, 3.25rem);
+  line-height: 1.15;
+}
+
+.home__hero h1 span {
+  color: #0b5ed7;
+}
+
+.home__cta-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.badge--verified {
+  background: #25d366;
+  color: #07162b;
+  font-size: 0.7rem;
+  padding: 0.25rem 0.65rem;
+}
+
+.verified {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+@media (max-width: 720px) {
+  .home {
+    text-align: left;
+  }
+
+  .home__cta-group {
+    width: 100%;
+    justify-content: flex-start;
+  }
+}

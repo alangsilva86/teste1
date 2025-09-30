@@ -1,0 +1,26 @@
+.faq {
+  gap: 1.5rem;
+}
+
+.faq__list {
+  display: grid;
+  gap: 1rem;
+}
+
+.faq__list details {
+  background: #fff;
+  border-radius: 14px;
+  padding: 1rem 1.25rem;
+  box-shadow: 0 16px 32px rgba(12, 28, 58, 0.08);
+}
+
+.faq__list summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: #07162b;
+}
+
+.faq__list p {
+  margin: 0.75rem 0 0;
+  color: #31425d;
+}
